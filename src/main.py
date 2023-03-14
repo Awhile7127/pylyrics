@@ -23,19 +23,24 @@ def parse_html(html):
 	soup = BeautifulSoup(html, features='html.parser')
 
 	# Find div with lyrics
-	div = soup.find('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6 YYrds'})
+	div = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6 YYrds'})
 
 	# Used later to replace '<br>' tags with line breaks
 	delimeter = '\n'
 
-	# Iterate through '<br>' tags in the div
-	for line_break in div.find_all('br'):
+	# Used later to return scraped text
+	text = []
 
-		# Replace '<br>' tags with line breaks
-		line_break.replace_with(delimeter)
+	for i in range(len(div)):
 
-	# Split the lyrics and store them in an array
-	text = div.get_text().split(delimeter)
+		# Iterate through '<br>' tags in the div
+		for line_break in div[i].find_all('br'):
+
+			# Replace '<br>' tags with line breaks
+			line_break.replace_with(delimeter)
+
+		text.append(div[i].get_text())
+
 	return text
 
 
