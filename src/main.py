@@ -31,6 +31,7 @@ def parse_html(html):
 	# Used later to return scraped text
 	text = []
 
+	# Iterate through the divs scraped
 	for i in range(len(div)):
 
 		# Iterate through '<br>' tags in the div
@@ -39,6 +40,7 @@ def parse_html(html):
 			# Replace '<br>' tags with line breaks
 			line_break.replace_with(delimeter)
 
+		# Append the modified text from the div to the list initialised earlier
 		text.append(div[i].get_text())
 
 	return text
