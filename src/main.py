@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # Used for HTML parsing
 from bs4 import BeautifulSoup
 
@@ -24,6 +26,24 @@ def parse_html(html):
 
 	# Find div with lyrics
 	div = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6 Dzxov'})
+
+	# If Genius updates their div IDs, throw an error
+	if div = '':
+		print(
+		"""
+		Div not found!
+
+		Please ensure that you pasted the correct URL, or entered the right name.
+
+		If this issue persists, please open an issue here:
+		https://gitlab.com/Awhile7127/pylyrics
+
+		Or email gitlab@sbcv.co.uk
+
+		Regularly check the Gitlab repository for updates!
+		"""
+		)
+		exit()
 
 	# Used later to replace '<br>' tags with line breaks
 	delimeter = '\n'
