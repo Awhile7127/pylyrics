@@ -23,7 +23,8 @@ pip3 install -r requirements.txt
 
 ```
 python3 src/main.py --help
-python3 src/main.py <url> <name>
+python3 src/main.py <url> OR <name>
+./main <url> OR <name>
 ```
 
 - url **OPTIONAL**: The URL of the server where requests are sent

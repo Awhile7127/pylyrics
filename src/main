@@ -25,10 +25,10 @@ def parse_html(html):
 	soup = BeautifulSoup(html, features='html.parser')
 
 	# Find div with lyrics
-	div = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6 Dzxov'})
+	div = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-5 Dzxov'})
 
 	# If Genius updates their div IDs, throw an error
-	if div = '':
+	if div == []:
 		print(
 		"""
 		Div not found!
