@@ -23,7 +23,7 @@ def parse_html(html):
 	soup = BeautifulSoup(html, features='html.parser')
 
 	# Find div with lyrics
-	div = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6 YYrds'})
+	div = soup.find_all('div', {'class': 'Lyrics__Container-sc-1ynbvzw-6 Dzxov'})
 
 	# Used later to replace '<br>' tags with line breaks
 	delimeter = '\n'
